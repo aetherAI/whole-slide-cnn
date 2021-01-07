@@ -1,0 +1,42 @@
+RESULT_DIR: "result_throughput_11000_r50_wholeslide_noopt"
+MODEL_PATH: "${RESULT_DIR}/model.h5"
+LOAD_MODEL_BEFORE_TRAIN: False
+CONFIG_RECORD_PATH: "${RESULT_DIR}/config.yaml"
+
+USE_MIXED_PRECISION: False
+USE_HMS: False
+USE_MIL: False
+
+TRAIN_CSV_PATH: "data_configs/train_alldata.csv"
+VAL_CSV_PATH: "data_configs/val_dummy.csv"
+TEST_CSV_PATH: "data_configs/test_alldata.csv"
+SLIDE_DIR: "slide_data/"
+SLIDE_FILE_EXTENSION: ".ndpi"
+SLIDE_READER: "openslide"
+RESIZE_RATIO: 0.1
+INPUT_SIZE: [11000, 11000, 3]
+
+MODEL: "fixup_resnet50"
+NUM_CLASSES: 3
+BATCH_SIZE: 1
+EPOCHS: 1
+NUM_UPDATES_PER_EPOCH: 40
+INIT_LEARNING_RATE: 0.00002
+POOL_USE: "gmp"
+REDUCE_LR_FACTOR: 0.1
+REDUCE_LR_PATIENCE: 24
+TIME_RECORD_PATH: "${RESULT_DIR}/time_record.csv"
+TEST_TIME_RECORD_PATH: "${RESULT_DIR}/test_time_record.csv"
+
+MIL_PATCH_SIZE: [224, 224]
+MIL_INFER_BATCH_SIZE: 32
+MIL_USE_EM: False
+MIL_K: 1
+MIL_SKIP_WHITE: True
+
+TEST_RESULT_PATH: "${RESULT_DIR}/test_result.json"
+ENABLE_VIZ: False
+VIZ_SIZE: [2150, 2150]
+VIZ_FOLDER: "${RESULT_DIR}/viz"
+
+DEBUG_PATH: NULL

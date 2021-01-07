@@ -1,0 +1,42 @@
+RESULT_DIR: "result_wholeslide_4x_quarter"
+MODEL_PATH: "${RESULT_DIR}/model.h5"
+LOAD_MODEL_BEFORE_TRAIN: False
+CONFIG_RECORD_PATH: "${RESULT_DIR}/config.yaml"
+
+USE_MIXED_PRECISION: True
+USE_HMS: True
+USE_MIL: False
+
+TRAIN_CSV_PATH: "data_configs/train_quarter.csv"
+VAL_CSV_PATH: "data_configs/val_alldata.csv"
+TEST_CSV_PATH: "data_configs/test_alldata.csv"
+SLIDE_DIR: "slide_data/"
+SLIDE_FILE_EXTENSION: ".ndpi"
+SLIDE_READER: "openslide"
+RESIZE_RATIO: 0.2 # 4x magnification for 20x WSIs
+INPUT_SIZE: [21500, 21500, 3]
+
+MODEL: "fixup_resnet50"
+NUM_CLASSES: 3
+BATCH_SIZE: 1
+EPOCHS: 200
+NUM_UPDATES_PER_EPOCH: 100
+INIT_LEARNING_RATE: 0.00002
+POOL_USE: "gmp"
+REDUCE_LR_FACTOR: 0.1
+REDUCE_LR_PATIENCE: 24
+TIME_RECORD_PATH: "${RESULT_DIR}/time_record.csv"
+TEST_TIME_RECORD_PATH: "${RESULT_DIR}/test_time_record.csv"
+
+MIL_PATCH_SIZE: NULL
+MIL_INFER_BATCH_SIZE: NULL
+MIL_USE_EM: False
+MIL_K: NULL
+MIL_SKIP_WHITE: NULL
+
+TEST_RESULT_PATH: "${RESULT_DIR}/test_result.json"
+ENABLE_VIZ: False
+VIZ_SIZE: [2150, 2150]
+VIZ_FOLDER: "${RESULT_DIR}/viz"
+
+DEBUG_PATH: NULL
