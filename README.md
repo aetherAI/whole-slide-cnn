@@ -3,6 +3,12 @@
 This repository provides scripts to reproduce the results in the paper "An Annotation-free Whole-slide Training Approach to Pathological Classification of Lung Cancer Types by Deep Neural Network", including model training, inference, visualization, and statistics calculation, etc.
 Also, the pipeline is seamlessly adaptable to other pathological cases by simply creating new configuration files. 
 
+## License
+
+Copyright (C) 2021 aetherAI Co., Ltd.
+All rights reserved.
+Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
 ## Requirements
 
 ### Hardware Requirements
