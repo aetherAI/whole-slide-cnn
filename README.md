@@ -30,6 +30,7 @@ Some Python packages should be installed before running the scripts, including
 - (optional) R 4.0.2 (https://www.r-project.org/)
 
 Refer to requirements.txt for the full list.
+The installation of these packages should take few minutes.
 
 ## Usage
 
@@ -120,10 +121,12 @@ mpirun -np 4 -x CUDA_VISIBLE_DEVICES="0,1,2,3" python -m whole_slide_cnn.train -
 
 Note that you should `cd` to the root folder of this repo before calling the above commands.
 
+Typically, this step takes days to complete, depending on the computing power, while you can trace the progress in real time from program output.
+
 ### 4. (Optional) Post-train Patch Aggregation Model for MIL
 
-EM-MILMILRNN and CNN-MaxFeat-based RF involve training a second patch aggregation model, requiring users to run another script to initiate patch aggregation model training.
-Just like the command above, simple call
+EM-MIL-SVM, EM-MIL-LR, MIL-RNN and CNN-MaxFeat-based RF involve training a second patch aggregation model, requiring users to run another script to initiate patch aggregation model training.
+Just like the command above, simply call
 ```
 [mpirun ...] python -m whole_slide_cnn.post_train --config YOUR_TRAIN_CONFIG.YAML 
 ```
@@ -148,3 +151,10 @@ See the following table for the usage of each tool.
 | tools/gen_bootstrap_aucs.R | Generate 100 AUCs by bootstrapping.        | tools/gen_bootstrap_aucs.R RESULT_DIR/test_result.json
 
 Note that these tools are currently profiled for lung cancer maintype classification and should be modified when applying to your own tasks.
+
+## Data Availability
+
+The slide data from TMUH, WFH and SHH are not publicly available due to patient privacy constraints, but are available uponon reasonable request from the corresponding author Chao-Yuan Yeh or Cheng-Yu Chen. 
+The slide data supporting the cross-site generalization capability in this study are obtained from TCGA via the Genomic Data Commons Data Portal (https://gdc.cancer.gov).
+
+A dataset consists of several slides from TCGA-LUAD and TCGA-LUSC is suitable for testing our pipeline in small scale, with some proper modifications of configuration files described above.
