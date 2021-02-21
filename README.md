@@ -1,7 +1,11 @@
 # Whole-slide CNN Training Pipeline
 
-This repository provides scripts to reproduce the results in the paper "An Annotation-free Whole-slide Training Approach to Pathological Classification of Lung Cancer Types by Deep Learning", including model training, inference, visualization, and statistics calculation, etc.
+This repository provides scripts to reproduce the results in the paper "An annotation-free whole-slide training approach to pathological classification of lung cancer types by deep learning", including model training, inference, visualization, and statistics calculation, etc.
 Also, the pipeline is seamlessly adaptable to other pathological cases by simply creating new configuration files. 
+
+## Publication
+
+Chen, CL., Chen, CC., Yu, WH. *et al.* An annotation-free whole-slide training approach to pathological classification of lung cancer types using deep learning. *Nat Commun* **12,** 1193 (2021). https://doi.org/10.1038/s41467-021-21467-y
 
 ## License
 
