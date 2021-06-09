@@ -7,6 +7,8 @@ Also, the pipeline is seamlessly adaptable to other pathological cases by simply
 
 Chen, CL., Chen, CC., Yu, WH. *et al.* An annotation-free whole-slide training approach to pathological classification of lung cancer types using deep learning. *Nat Commun* **12,** 1193 (2021). https://doi.org/10.1038/s41467-021-21467-y
 
+Chuang, WY., Chen, CC., Yu, WH. *et al.* Identification of nodal micrometastasis in colorectal cancer using deep learning on annotation-free whole-slide images. *Mod Pathol* (2021). https://doi.org/10.1038/s41379-021-00838-2
+
 ## License
 
 Copyright (C) 2021 aetherAI Co., Ltd.
