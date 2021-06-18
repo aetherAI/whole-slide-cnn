@@ -15,6 +15,20 @@ Copyright (C) 2021 aetherAI Co., Ltd.
 All rights reserved.
 Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 
+## TCGA Pre-trained Model
+
+A referenced pre-trained weight for lung cancer type classification is now available at https://drive.google.com/file/d/1XuONWICAzJ-cUKjC7uHLS0YLJhbLRoo1/view?usp=sharing.
+Please follow the instructions in the "Usage" section to do evaluation.
+
+The model was trained by TCGA-LUAD and TCGA-LUSC diagnostic slides specified in `data_configs/pure_tcga/train_pure_tcga.csv` using the config `train_configs/pure_tcga/config_pure_tcga_wholeslide_4x.yaml`.
+Since no normal lung slides were provided in these data sets, the model predicts a slide as either adenocarcinoma (class_id=1) or squamous cell carcinoma (class_id=2).
+The prediction scores for normal (class_id=0) should be ignored.
+
+Validation results (*n* = 192) on `data_configs/pure_tcga/val_pure_tcga.csv` are listed as follow.
+
+- AUC (LUAD vs LUSC) = **0.9794** (95% CI: 0.9635-0.9953)
+- Accuracy (LUAD vs LUSC) = **0.9323** (95% CI: 0.8876-0.9600, @threshold = 0.7 for class1, 0.3 for class2)
+
 ## Requirements
 
 ### Hardware Requirements

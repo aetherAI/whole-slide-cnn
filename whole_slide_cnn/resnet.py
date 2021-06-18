@@ -567,6 +567,9 @@ def normalize_layer(tensor, name, axis, norm_use='bn'):
 
     if norm_use == "bn":
         x = _BatchNormalization(axis=axis, name=name + 'bn', epsilon=1.001e-5)(tensor)
+    elif norm_use == "frozen_bn":
+        layer = _BatchNormalization(axis=axis, name=name + 'bn', epsilon=1.001e-5, trainable=False)
+        x = layer(tensor, training=False)
     elif norm_use == None or norm_use == "":
         x = tensor
     else:

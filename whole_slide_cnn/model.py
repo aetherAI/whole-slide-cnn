@@ -31,6 +31,15 @@ graph_mapping = {
         data_format="channels_last",
         **kwargs
     ),
+    "frozenbn_resnet50": lambda *args, **kwargs: ResNet50(
+        *args,
+        norm_use="frozen_bn",
+        weights="imagenet",
+        use_fixup=False,
+        data_format="channels_last",
+        to_caffe_preproc=True,
+        **kwargs
+    ),
 }
 
 
