@@ -345,6 +345,8 @@ class HugeLayerWrapper(KL.Wrapper):
                 sliced_layer.gamma = self.layer.gamma[idx * sliced_c_size: (idx + 1) * sliced_c_size]
             if self.layer.center:
                 sliced_layer.beta = self.layer.beta[idx * sliced_c_size: (idx + 1) * sliced_c_size]
+            sliced_layer.moving_mean = self.layer.moving_mean[idx * sliced_c_size: (idx + 1) * sliced_c_size]
+            sliced_layer.moving_variance = self.layer.moving_variance[idx * sliced_c_size: (idx + 1) * sliced_c_size]
 
             # Apply
             output_tensor = sliced_layer.call(input_tensor, **kwargs)

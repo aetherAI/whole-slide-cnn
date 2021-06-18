@@ -3,6 +3,8 @@
 This repository provides scripts to reproduce the results in the paper "An annotation-free whole-slide training approach to pathological classification of lung cancer types by deep learning", including model training, inference, visualization, and statistics calculation, etc.
 Also, the pipeline is seamlessly adaptable to other pathological cases by simply creating new configuration files. 
 
+<img src="https://user-images.githubusercontent.com/6285919/122543694-a180ad00-d05e-11eb-8ad0-e8a4b22d29a7.png" width="800" />
+
 ## Publication
 
 Chen, CL., Chen, CC., Yu, WH. *et al.* An annotation-free whole-slide training approach to pathological classification of lung cancer types using deep learning. *Nat Commun* **12,** 1193 (2021). https://doi.org/10.1038/s41467-021-21467-y
@@ -14,6 +16,22 @@ Chuang, WY., Chen, CC., Yu, WH. *et al.* Identification of nodal micrometastasis
 Copyright (C) 2021 aetherAI Co., Ltd.
 All rights reserved.
 Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
+## TCGA Pre-trained Model
+
+A referenced pre-trained weight for lung cancer type classification is now available at https://drive.google.com/file/d/1XuONWICAzJ-cUKjC7uHLS0YLJhbLRoo1/view?usp=sharing.
+
+The model was trained by TCGA-LUAD and TCGA-LUSC diagnostic slides specified in `data_configs/pure_tcga/train_pure_tcga.csv` using the config `train_configs/pure_tcga/config_pure_tcga_wholeslide_4x.yaml`.
+Since no normal lung slides were provided in these data sets, the model predicts a slide as either adenocarcinoma (class_id=1) or squamous cell carcinoma (class_id=2).
+The prediction scores for normal (class_id=0) should be ignored.
+
+Validation results (*n* = 192) on `data_configs/pure_tcga/val_pure_tcga.csv` are listed as follow.
+
+- AUC (LUAD vs LUSC) = **0.9794** (95% CI: 0.9635-0.9953)
+- Accuracy (LUAD vs LUSC) = **0.9323** (95% CI: 0.8876-0.9600, @threshold = 0.7 for class1, 0.3 for class2)
+
+<img src="https://user-images.githubusercontent.com/6285919/122541978-cd029800-d05c-11eb-932c-3cc0c517101e.png" width="400" />
+
 
 ## Requirements
 
