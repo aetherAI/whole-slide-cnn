@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "Whole-slide CNN Training Pipeline"
+version = "1.0.0"
+description = "This repository provides scripts to reproduce the results in the paper \"An annotation-free whole-slide training approach to pathological classification of lung cancer types by deep learning\"."
+authors = ["Chi-Chung Chen <chenchc@aetherai.com>"]
+license = "CC BY-NC-SA 4.0"
+
+[tool.poetry.dependencies]
+python = ">=3.7 <3.11"
+horovod = "0.19.0"
+mpi4py = "3.0.3"
+openslide-python = "1.1.2"
+tensorflow-huge-model-support = {git = "https://github.com/aetherAI/tensorflow-huge-model-support.git", rev = "1.1.2"}
+imgaug = "^0.4.0"
+tensorflow-gpu = "1.15.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
